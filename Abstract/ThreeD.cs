@@ -4,13 +4,10 @@ namespace OOP_Tasks_Day1.Abstract
 {
     public abstract class ThreeD : Shape
     {
-        protected ThreeD(int a)
+        protected ThreeD(int a):base(a)
         {
-            base.IAmXD = "3D";
-            SideLength = a;
+            base.AmXd = "3D";
         }
-
-        public abstract override double CalculateArea();
 
         public abstract double CalculateVolume();
 

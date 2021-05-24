@@ -2,12 +2,9 @@
 {
     public abstract class TwoD : Shape
     {
-        protected TwoD(int a)
+        protected TwoD(int a):base(a)
         {
-            base.IAmXD = "2D";
-            SideLength = a;
+            base.AmXd = "2D";
         }
-
-        public abstract override double CalculateArea();
     }
 }
