@@ -1,28 +1,25 @@
-﻿namespace OOP_Tasks_Day1.Abstract
+﻿using System;
+
+namespace OOP_Tasks_Day1.Abstract
 {
-    public abstract class ThreeD : IShape
+    public abstract class ThreeD : Shape
     {
-        public abstract double AreaVar { get; set; }
-        public abstract double VolumeVar { get; set; }
-        public double Length { get; set; }
-
-        // constructors
-
         protected ThreeD(int a)
         {
-            Length = a;
+            base.IAmXD = "3D";
+            SideLength = a;
         }
 
-        // Copy Constructor
-        protected ThreeD(ThreeD threeDimensional)
+        public abstract override double CalculateArea();
+
+        public abstract double CalculateVolume();
+
+        public override string ShapeStringify(Shape shape)
         {
-            Length = threeDimensional.Length;
+            var temp = base.ShapeStringify(shape).Split("\n");
+            var resultForThreeD = temp[0] + $", Volume = {Math.Round(CalculateVolume(), 2)}\n" + temp[1];
+
+            return resultForThreeD;
         }
-
-        public abstract double CalculateArea();
-
-        public abstract double GetVolume();
-
-        public abstract override string ToString();
     }
 }

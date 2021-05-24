@@ -1,25 +1,13 @@
 ﻿namespace OOP_Tasks_Day1.Abstract
 {
-    public abstract class TwoD : IShape
+    public abstract class TwoD : Shape
     {
-        public abstract double AreaVar { get; set; }
-        public double Length { get; set; }
-
-        // constructors
-
         protected TwoD(int a)
         {
-            Length = a;
+            base.IAmXD = "2D";
+            SideLength = a;
         }
 
-        // Copy Constructor
-        protected TwoD(TwoD twoDimensional)
-        {
-            Length = twoDimensional.Length;
-        }
-
-        public abstract override string ToString();
-
-        public abstract double CalculateArea();
+        public abstract override double CalculateArea();
     }
 }
