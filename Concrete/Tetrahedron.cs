@@ -5,30 +5,18 @@ namespace OOP_Tasks_Day1.Concrete
 {
     public class Tetrahedron : ThreeD
     {
-        public override double AreaVar { get; set; }
-        public override double VolumeVar { get; set; }
-
         public Tetrahedron(int a) : base(a)
         {
         }
 
         public override double CalculateArea()
         {
-            AreaVar = Math.Sqrt(3) * Math.Pow(Length, 2);
-            return AreaVar;
+            return Math.Sqrt(3) * Math.Pow(SideLength, 2);
         }
 
-        public override double GetVolume()
+        public override double CalculateVolume()
         {
-            VolumeVar = Math.Pow(Length, 3) / (6 * Math.Sqrt(2));
-            return VolumeVar;
-        }
-
-        public override string ToString()
-        {
-            string objName = nameof(Tetrahedron);
-            return $"{objName} (3D ({Length})) ==> Surface area = {CalculateArea()}, Volume = {GetVolume()}" +
-                   $"\nI am a {objName} shape";
+            return Math.Pow(SideLength, 3) / (6 * Math.Sqrt(2));
         }
     }
 }
