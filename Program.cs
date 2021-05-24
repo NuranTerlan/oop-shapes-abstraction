@@ -48,7 +48,7 @@ namespace OOP_Tasks_Day1
         static void IterateArrayList(ArrayList al)
         {
             int count = 1;
-            foreach (var obj in al)
+            foreach (Shape obj in al)
             {
                 Console.WriteLine("----------------------\n" +
                                   $"Shape [{count}] = {obj}" +
